@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import com.example.demo.dto.ApiResponseDTO;
 import com.example.demo.dto.DepartmentDTO;
 
-@FeignClient(name = "department-service", url = "http://localhost:8081") // Adjust the URL as needed
+@FeignClient(name = "department-service") 
 public interface APIClient {
 
-    @GetMapping("/api/departments/{id}")
+    @GetMapping("/departments/{id}")
     ApiResponseDTO<DepartmentDTO> getDepartmentById(@PathVariable("id") Long id);
 }
 

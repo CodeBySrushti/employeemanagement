@@ -6,13 +6,9 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "departments")
-@NoArgsConstructor
-@AllArgsConstructor
 public class Department {
     
     @Id
@@ -29,15 +25,28 @@ public class Department {
     @Column(name = "department_code", unique = true)
     private String departmentCode;
     
-    // private List<Employee> employees;
+    private int phoneNumber;
     
-    public Department(long id, String departmentName, String departmentDescription, String departmentCode) {
+    private String location;
+    
+    private int floorNumber;
+
+    // Default constructor
+    public Department() {
+    }
+
+    // Parameterized constructor
+    public Department(Long id, String departmentName, String departmentDescription, String departmentCode, int phoneNumber, String location, int floorNumber) {
         this.id = id;
         this.departmentName = departmentName;
         this.departmentDescription = departmentDescription;
         this.departmentCode = departmentCode;
+        this.phoneNumber = phoneNumber;
+        this.location = location;
+        this.floorNumber = floorNumber;
     }
 
+    // Getters and setters
     public Long getId() {
         return id;
     }
@@ -69,6 +78,31 @@ public class Department {
     public void setDepartmentCode(String departmentCode) {
         this.departmentCode = departmentCode;
     }
+
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
+
+	public int getFloorNumber() {
+		return floorNumber;
+	}
+
+	public void setFloorNumber(int floorNumber) {
+		this.floorNumber = floorNumber;
+	}
+    
 }
 
 
@@ -78,7 +112,11 @@ public class Department {
 
 
 
-// @OneToMany(mappedBy = "department", cascade = CascadeType.ALL, orphanRemoval = true)
-//   private List<Employee> employees;
-//}
+
+
+
+
+
+
+
 

@@ -45,6 +45,11 @@ public class DepartmentServiceImpl implements DepartmentService {
         existingDepartment.setDepartmentName(updateDepartment.getDepartmentName());
         existingDepartment.setDepartmentDescription(updateDepartment.getDepartmentDescription());
         existingDepartment.setDepartmentCode(updateDepartment.getDepartmentCode());
+        
+        existingDepartment.setPhoneNumber(updateDepartment.getPhoneNumber());
+        existingDepartment.setLocation(updateDepartment.getLocation());
+        existingDepartment.setFloorNumber(updateDepartment.getFloorNumber());
+        
         return departmentRepository.save(existingDepartment);
     }
 

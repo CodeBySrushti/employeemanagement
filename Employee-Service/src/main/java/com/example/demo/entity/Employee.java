@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.time.LocalDate;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -34,7 +36,26 @@ public class Employee {
 	@Column(name = "email", nullable = false)
 	private String email;
 	
-	//private Department department;
+	private int age;
+    private int salary;
+    private LocalDate date_of_joining;
+	
+    @Column(name = "department_id", nullable = false)
+    private Long departmentId;
+
+	
+
+	public Long getDepartmentId() {
+		return departmentId;
+	}
+
+	public void setDepartmentId(Long departmentId) {
+		this.departmentId = departmentId;
+	}
+
+	public Employee(long l, String string, String string2, String string3) {
+		// TODO Auto-generated constructor stub
+	}
 
 	public Long getId() {
 		return id;
@@ -68,10 +89,35 @@ public class Employee {
 		this.email = email;
 	}
 
-//   @ManyToOne
-//    @JoinColumn(name = "department_id", nullable = false)
-//	private Department department;
+ 
+	public int getAge() {
+		return age;
+	}
 
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
+	}
+
+	public LocalDate getDate_of_joining() {
+		return date_of_joining;
+	}
+
+	public void setDate_of_joining(LocalDate date_of_joining) {
+		this.date_of_joining = date_of_joining;
+	}
+
+	public Employee() {
+	
+	}
 
 }
+
 

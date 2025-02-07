@@ -5,6 +5,7 @@ import java.util.List;
 import com.example.demo.entity.Department;
 
 public interface DepartmentService {
+	
 	List<Department> getAllDepartments();
 	
 	Department getDepartmentById(Long id);

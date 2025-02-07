@@ -3,7 +3,6 @@ package com.example.demo.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -33,12 +32,23 @@ public class DepartmentController {
 		System.out.println(department.getDepartmentName());
 		System.out.println(department.getDepartmentCode());
 		System.out.println(department.getDepartmentDescription());
+		
+		System.out.println(department.getPhoneNumber());
+		System.out.println(department.getLocation());
+		System.out.println(department.getFloorNumber());
+		
+		
 		Department dept = departmentService.createDepartment(department);
 
 		System.out.println(dept.getId());
 		System.out.println(dept.getDepartmentName());
 		System.out.println(dept.getDepartmentCode());
 		System.out.println(dept.getDepartmentDescription());
+		
+		System.out.println(dept.getPhoneNumber());
+		System.out.println(dept.getLocation());
+		System.out.println(dept.getFloorNumber());
+		
 		return new ResponseEntity<>(dept, HttpStatus.CREATED);
 	}
 	
